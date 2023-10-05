@@ -13,16 +13,18 @@ public class PlayerController : MonoBehaviour
 
    private void Update()
    {
-      Rigidbody rb = GetComponent<Rigidbody>();
-
       transform.Translate(0, 0, moveSpeed * Time.deltaTime);
-      bool isKeyPressed = Input.GetKeyDown(jumpKey);
 
-      if (isKeyPressed)
+      if (Input.GetKeyDown(jumpKey) && IsTouchingGround())
       {
-         rb.AddForce(0, jumpForce, 0);
-         Debug.Log(rb.velocity);
+         GetComponent<Rigidbody>().AddForce(0, jumpForce, 0);
       }
+   }
+
+   bool IsTouchingGround()
+   {
+      int layerMask = LayerMask.GetMask("Ground");
+      return Physics.CheckBox(transform.position, transform.lossyScale / 1.99f, transform.rotation, layerMask);
    }
     
 }

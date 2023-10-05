@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 70108356}
   - component: {fileID: 70108355}
   - component: {fileID: 70108359}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -210,7 +210,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 70108354}
-  m_Mesh: {fileID: 764009591}
+  m_Mesh: {fileID: 832281455}
 --- !u!4 &70108358
 Transform:
   m_ObjectHideFlags: 0
@@ -332,7 +332,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 32.043, y: -147.697, z: -126.542}
---- !u!43 &764009591
+--- !u!43 &832281455
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -764,7 +764,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1 &1778285114
 GameObject:
