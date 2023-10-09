@@ -7,7 +7,7 @@ using UnityEngine.Serialization;
 public class PlayerController : MonoBehaviour
 {
    public int moveSpeed;
-   public int jumpForce;
+   public float jumpForce;
    public KeyCode jumpKey;
    public int spinSpeed;
 
@@ -23,18 +23,16 @@ public class PlayerController : MonoBehaviour
 
    private void Update()
    {
-      Rigidbody rigidbody = GetComponent<Rigidbody>();
-      rigidbody.angularVelocity = new Vector3(spinSpeed, 0, 0);
+      GetComponent<Rigidbody>().angularVelocity = new Vector3(spinSpeed, 0, 0);
 
       if (Input.GetKey(jumpKey) && IsTouchingGround())
          Jump();
-      
    }
 
    private void Jump()
    {
       Rigidbody rigidbody = GetComponent<Rigidbody>();
-
+      rigidbody.velocity = new Vector3(rigidbody.velocity.x, jumpForce, rigidbody.velocity.z);
       rigidbody.AddForce(0, jumpForce, 0);
    }
 
