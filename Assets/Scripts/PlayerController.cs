@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
       Rigidbody rigidbody = GetComponent<Rigidbody>();
       rigidbody.angularVelocity = new Vector3(spinSpeed, 0, 0);
 
-      if (Input.GetKeyDown(jumpKey) && IsTouchingGround())
+      if (Input.GetKey(jumpKey) && IsTouchingGround())
          Jump();
       
    }
